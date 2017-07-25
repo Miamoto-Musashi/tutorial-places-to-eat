@@ -111,7 +111,7 @@ Usage Error - Please invoke the command as follows:
 
 def query1(db, col, col_name, lat, lon):
     q="""FOR d IN {col_name}
-            FILTER distance(d.lat, d.lon, {lat}, {lon})
+            FILTER distance(d.lat, d.lon, {lat}, {lon}) < 1000
             LIMIT 5
             RETURN d
 """.format(col_name=col_name, lat=lat, lon=lon)
